@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1E2761 0%, #408EC6 100%); /* Dark blue to lighter blue gradient */
+    color: #f8f8f8; /* Light color for text to contrast with the background */
+    text-align: center;
+}
+
+h1, h2 {
+    color: transparent; /* Make the text transparent for the gradient effect */
+    background: linear-gradient(135deg, #ffffff 0%, #000000 100%); /* Deep red for the header */
+    -webkit-background-clip: text; /* Safari and Chrome */
+    background-clip: text; /* Non-prefixed version */
+    font-size: 3em; /* Increase size for h1 */
+    margin: 0.5em 0;
+}
+
+h2 {
+    font-size: 2em; /* Adjust size for h2 */
+}
+
+table {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    background: linear-gradient(135deg, #7A2048 0%, #7A2048 100%); /* Deep red for table headers */
+    color: #f8f8f8; /* Light text color for headers */
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for table data */
+    color: #f8f8f8; /* Light text color for table data */
+}

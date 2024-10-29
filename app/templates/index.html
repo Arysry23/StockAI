@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Indicator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="stats">
+        <p>Invested Value: Rs50,000 | Current Value: Rs50,000</p>
+    </div>
+    
+    <h1>Breakout Indicator</h1>
+    <h2>Stock Predictions</h2>
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Current Price</th>
+            <th>Volume</th>
+            <th>Volume Trend</th>
+            <th>Recommendation</th>
+            <th>Past Prediction Accuracy (%)</th>
+        </tr>
+        {% for symbol, (result, current_price, current_volume, volume_trend) in predictions.items() %}
+        <tr>
+            <td>{{ symbol }}</td>
+            <td>
+                {% if current_price is not none %}
+                    {{ '%.2f' | format(current_price) }} 
+                {% else %}
+                    Not available
+                {% endif %}
+            </td>
+            <td>
+                {% if current_volume is not none %}
+                    {{ '%.2f' | format(current_volume / 10**7) }} Crores
+                {% else %}
+                    Not available
+                {% endif %}
+            </td>
+            <td>{{ volume_trend }}</td>
+            <td>{{ result }}</td>
+            <td>{{ accuracy_scores[symbol] | round(2) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
