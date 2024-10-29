@@ -75,10 +75,7 @@ def index():
     return render_template('index.html', predictions=predictions, accuracy_scores=accuracy_scores)
 
 if __name__ == "__main__":
-    # Start the scheduler in a separate thread
-    import threading
-    scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
-    scheduler_thread.start()
+    
    # Use the port from the environment variable or default to 5000
     port = int(os.environ.get("PORT", 5000))  # Use the PORT variable from Render
     app.run(host='0.0.0.0', port=port, debug=True)
