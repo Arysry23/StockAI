@@ -1,1 +1,1 @@
-git commit -m "Updated code with new features and files"
+web: flask run --host=0.0.0.0 --port=$PORT
